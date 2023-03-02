@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+       #container{
+           display: flex;
+           justify-content: space-around;
+       }
+       .member{
+           font-size: 30px;
+           font-weight: 700;
+           height: 50px;
+           width: 60px;
+           /* background-color: aqua; */
+           display: flex;
+           align-items: center;
+           justify-content: center;
+           box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+       }
+       #roll{
+           margin-top: 20px;
+          margin-left: 45%;
+       }
+       #winner{
+           margin-left:40%;
+       }
+    </style>
+</head>
+<body>
+    <h1 id="winner"></h1>
+    <div id="container">
+        <div class="member" id="member-1">
+        </div>
+        <div class="member" id="member-2">
+        </div>
+        <div class="member" id="member-3">
+        </div> 
+    </div>
+    <button id="roll"> refresh</button>
+</body>
+</html>
+<script>
+    document.querySelector("#roll").addEventListener("click",forproduct)
+    function forproduct(){
+        var dice1 = document.querySelector("#member-1");
+        var memberA = Math.floor(Math.random()*6)+1;
+        dice1.innerHTML=memberA;
+
+        var dice2 = document.querySelector("#member-2");
+        var memberB = Math.floor(Math.random()*6)+1;
+        dice2.innerHTML=memberB;
+
+        var dice3 = document.querySelector("#member-3");
+        var memberC = Math.floor(Math.random()*6)+1;
+        dice3.innerHTML=memberC;
+        
+        var forheding = document.querySelector("#winner")
+
+        if(memberA>memberB>memberC){
+            forheding.innerHTML = "Mamber A won";
+            dice1.style.backgroundColor="green";
+            dice2.style.backgroundColor="yellow";
+            dice3.style.backgroundColor="red";
+        }
+        if(memberB>memberA>memberC){
+           forheding.innerHTML = "Mamber B won";
+           dice1.style.backgroundColor="yellow";
+           dice2.style.backgroundColor="red";
+           dice3.style.backgroundColor="green"
+
+        }
+
+        else if(memberB<memberC && memberC<memberA){
+            forheding.innerHTML = "Mamber A won";
+            dice1.style.backgroundColor="green";
+            dice2.style.backgroundColor="yellow";
+            dice3.style.backgroundColor="red"
+
+        }
+
+        
+        else if(memberC<memberA && memberA<memberB){
+            forheding.innerHTML = "Mamber B won";
+            dice1.style.backgroundColor="yellow";
+            dice2.style.backgroundColor="green";
+            dice3.style.backgroundColor="red"
+        }
+        else if(memberB<memberA && memberA<memberC){
+            forheding.innerHTML = "Mamber C won";
+            dice1.style.backgroundColor="yellow";
+            dice2.style.backgroundColor="red";
+            dice3.style.backgroundColor="green"
+        }
+        else if(memberC<memberB && memberB<memberA){
+            forheding.innerHTML = "Mamber A won";
+            dice1.style.backgroundColor="green";
+            dice2.style.backgroundColor="yellow";
+            dice3.style.backgroundColor="red"
+        }
+        else if(memberA<memberC && memberC<memberB){
+            forheding.innerHTML = "Mamber B won";
+            dice1.style.backgroundColor="red";
+            dice2.style.backgroundColor="green";
+            dice3.style.backgroundColor="yellow"
+        }
+        else if(memberB<memberA && memberA==memberC){
+            forheding.innerHTML = "Mambers A and C won";
+            dice1.style.backgroundColor="blue";
+            dice2.style.backgroundColor="red";
+            dice3.style.backgroundColor="blue"
+        }
+        else if(memberC<memberB && memberB==memberA){
+            forheding.innerHTML="Mambers A and B won";
+            dice1.style.backgroundColor="blue";
+            dice2.style.backgroundColor="blue";
+            dice3.style.backgroundColor="red";
+        }
+        else if(memberA<Member3 && memberC==memberB){
+            forheding.innerHTML="Mambers B and C won";
+            dice1.style.backgroundColor="red";
+            dice2.style.backgroundColor="blue";
+            dice3.style.backgroundColor="blue";
+        }
+        else if(memberA<memberB && memberB==memberC){
+            forheding.innerHTML="Mambers B and C won";
+            dice1.style.backgroundColor="red";
+            dice2.style.backgroundColor="blue";
+            dice3.style.backgroundColor="blue";
+        }
+        else if(memberB<memberC && Member3==memberA){
+            forheding.innerHTML="Mambers A and C won";
+            dice1.style.backgroundColor="blue";
+            dice2.style.backgroundColor="red";
+            dice3.style.backgroundColor="blue";
+        }
+        else if(memberC<memberA && Member1==memberB){
+            forheding.innerHTML="Mambers A and B won";
+            dice1.style.backgroundColor="blue";
+            dice2.style.backgroundColor="blue";
+            dice3.style.backgroundColor="red";
+        }
+        else if(memberA==memberC && Member3==memberB){
+            forheding.innerHTML="Equal";
+            dice1.style.backgroundColor="blue";
+            dice2.style.backgroundColor="blue";
+            dice3.style.backgroundColor="blue";
+        }
+        else if(memberA==memberB && memberB<memberC){
+            forheding.innerHTML="Mambers C";
+            dice1.style.backgroundColor="blue";
+            dice2.style.backgroundColor="blue";
+            dice3.style.backgroundColor="green";
+        }
+        else if(memberB==memberC && memberB<memberA){
+            winner.innerHTML="Mambers A";
+            firstDice.style.backgroundColor="green";
+            secondDice.style.backgroundColor="blue";
+            thirdDice.style.backgroundColor="blue";
+        }
+        else if(memberA==memberC && memberA<memberB){
+            forheding.innerHTML="Member B";
+            dice1.style.backgroundColor="blue";
+            dice2.style.backgroundColor="green";
+            dice3.style.backgroundColor="blue";
+        }
+}    
+
+</script>
